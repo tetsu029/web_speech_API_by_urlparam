@@ -10,8 +10,9 @@
     var params = url.searchParams;
     var words = params.get('str');
     if(words == ""){
-			return;
-		}
+	return;
+	}
+	document.getElementById("str").innerHTML=words;
     var ss_uttr = new SpeechSynthesisUtterance(words);
     ss_uttr.lang = 'en-US"';
     speechSynthesis.speak(ss_uttr);

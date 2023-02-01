@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <p id="str">
+  </p>
+</body>
+<script>
+  window.onload = function () {
+    var url = new URL(window.location.href);
+    var params = url.searchParams;
+    var str = params.get('str');
+    console.log(str);
+    document.getElementById("str").innerText = str;
+    var msg = new SpeechSynthesisUtterance(str);
+    msg.lang = "en-US";
+    window.speechSynthesis.speak(msg);
+  }
+</script>
+</html>

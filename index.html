@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <body>
-  <p id="str">
-  </p>
+	<p id="str">
+	</p>
+	<button type=button onclick="speech()">
+音声
+</button> 
 </body>
 <script>
   window.onload = function () {
+	  speech();
+}
+function speech(){
 	const synth = window.speechSynthesis;
 	var url = new URL(window.location.href);
 	var params = url.searchParams;

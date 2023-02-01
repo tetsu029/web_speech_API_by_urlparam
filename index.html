@@ -6,17 +6,18 @@
 </body>
 <script>
   window.onload = function () {
-    var url = new URL(window.location.href);
-    var params = url.searchParams;
-    var words = params.get('str');
-    if(words == ""){
-	return;
+	const synth = window.speechSynthesis;
+	var url = new URL(window.location.href);
+	var params = url.searchParams;
+	var words = params.get('str');
+	if(words == ""){
+		return;
 	}
 	document.getElementById("str").innerHTML=words;
-    var ss_uttr = new SpeechSynthesisUtterance(words);
-    ss_uttr.lang = 'en-US';
-    speechSynthesis.speak(ss_uttr);
-  }
+	var ss_uttr = new SpeechSynthesisUtterance(words);
+	ss_uttr.lang = 'en-US';
+	synth.speak(ss_uttr);
+}
 </script>
 </html>
 

@@ -8,12 +8,21 @@
   window.onload = function () {
     var url = new URL(window.location.href);
     var params = url.searchParams;
-    var str = params.get('str');
-    console.log(str);
-    document.getElementById("str").innerText = str;
-    var msg = new SpeechSynthesisUtterance(str);
-    msg.lang = "en-US";
-    window.speechSynthesis.speak(msg);
+    var words = params.get('str');
+    if(words == ""){
+			return;
+		}
+    var ss_uttr = new SpeechSynthesisUtterance(words);
+    ss_uttr.lang = 'en-US"';
+    speechSynthesis.speak(ss_uttr);
   }
 </script>
 </html>
+
+
+	
+	
+	
+	
+	
+	
